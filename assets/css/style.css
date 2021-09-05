@@ -1,9 +1,28 @@
 /* Reset */
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+body {
     font-family: 'Raleway', sans-serif;
+    background: #232323;
+    font-size: 62.5%;
+    margin: 0;
+}
+
+/* Container */
+
+#container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+.square {
+    width: 30%;
+    background-color: purple;
+    padding-bottom: 30%;
+    float: left;
+    margin: 1.66%;
+    transition: background .5s;
+    -moz-transition: background .5;
+    -o-transition: background .5s;
 }
