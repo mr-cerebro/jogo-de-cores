@@ -24,9 +24,9 @@ resetButton.addEventListener("click", function() {
 })
 
 function setupSquares() {
-    for(let cont = 0 ; i < squares.length ; cont++) {
+    for(let cont = 0 ; cont < squares.length ; cont++) {
         squares[cont].style.backgroundColor = colors[cont]
-        squaresre[cont].addEventListener("click", function(){
+        squares[cont].addEventListener("click", function(){
             let clickedColor = this.style.backgroundColor
             if(clickedColor === pickedColor) {
                 messageDisplay.textContent = "Correct"
@@ -61,7 +61,7 @@ function setupMode() {
 function reset() {
     colors = genRandomColors(numSquares)
     pickedColor = chooseColor()
-    colorDisplay.textContent = pickedColor()
+    colorDisplay.textContent = pickedColor
     h1.style.backgroundColor = "#232323"
     resetButton.textContent = "New Colors"
     messageDisplay.textContent = ""
@@ -100,5 +100,5 @@ function makeColor() {
     var r = Math.floor(Math.random() * 256)
     var g = Math.floor(Math.random() * 256)
     var b = Math.floor(Math.random() * 256)
-    return rgb `${r}, ${g}, ${b}`
+    return "rgb(" + r + ", " + g + ", " + b +")"
 }
