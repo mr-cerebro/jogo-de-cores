@@ -24,7 +24,7 @@ resetButton.addEventListener("click", function() {
 })
 
 function setupSquares() {
-    for(let cont = 0; i < squares.length; cont++) {
+    for(let cont = 0 ; i < squares.length ; cont++) {
         squares[cont].style.backgroundColor = colors[cont]
         squaresre[cont].addEventListener("click", function(){
             let clickedColor = this.style.backgroundColor
@@ -41,7 +41,7 @@ function setupSquares() {
 }
 
 function setupMode() {
-    for (let cont = 0 ; cont < modeButtnons.length; cont++) {
+    for (let cont = 0 ; cont < modeButtnons.length ; cont++) {
         modeButtnons[cont].addEventListener("click", function() {
             for(let cont = 0; cont < modeButtnons.length; cont++) {
                 modeButtnons[cont].classList.remove("selected")
@@ -65,10 +65,40 @@ function reset() {
     h1.style.backgroundColor = "#232323"
     resetButton.textContent = "New Colors"
     messageDisplay.textContent = ""
-    for (let cont = 0; cont < squares.length ; cont++) {
+    for (let cont = 0 ; cont < squares.length ; cont++) {
         if(colors[cont]) {
             squares[cont].style.display = "block"
             squares[cont].style.backgroundColor = colors[cont]
         }
+        else {
+            squares[cont].style.display = "none"
+        }
     }
+}
+
+function changeColors(color) {
+    for (let cont = 0 ; cont < squares.length ; cont++) {
+        squares[cont].style.backgroundColor = color
+        h1.style.backgroundColor = color
+    }
+}
+
+function chooseColor() {
+    var random = Math.floor(Math.random() * colors.length)
+    return colors[random]
+}
+
+function genRandomColors(num) {
+    var arr = []
+    for (let cont = 0 ; cont < num ; cont++) {
+        arr.push(makeColor())
+    }
+    return arr
+}
+
+function makeColor() {
+    var r = Math.floor(Math.random() * 256)
+    var g = Math.floor(Math.random() * 256)
+    var b = Math.floor(Math.random() * 256)
+    return rgb `${r}, ${g}, ${b}`
 }
